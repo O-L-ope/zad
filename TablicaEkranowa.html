@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <table id="tabelka">
+    </table>
+
+    <script>
+        function Literki(charA, charZ) {
+            var a = [], n = charA.charCodeAt(), x = charZ.charCodeAt();
+
+            for (; n <= x; ++n) {
+                a.push(String.fromCharCode(n));
+            }
+            return a;
+        }
+
+
+        function tabela() {
+            var tabela = document.createElement("Tabela");
+            let tablicaLiter = Literki('A', 'Z');
+            tablicaLiter.forEach((element)  => {
+                b = document.createElement("button");
+                b.innerHTML = element;
+                b.addEventListener('click', 
+                function() {
+                    window.alert("Kliknales guzik!");
+                });
+                document.body.appendChild(b);
+            });
+        }
+
+
+        tabela()
+    </script>
+</body>
+
+</html>
